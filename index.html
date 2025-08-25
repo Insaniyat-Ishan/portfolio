@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Insaniyat Ishan — Portfolio</title>
+  <meta name="description" content="Portfolio of Insaniyat Ishan — CSE graduate, developer, and researcher." />
+  <link rel="icon" href="assets/favicon.jpg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+        <a href="#home" class="brand" aria-label="Home">
+            <span class="brand-badge">
+                <img src="assets/logo.jpg" alt="Insaniyat Ishan logo" class="brand-img">
+            </span>
+            <span class="brand-text">Insaniyat Ishan</span>
+        </a>
+
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="assets/final.pdf" target="_blank" rel="noopener">Resume</a></li>
+          <!-- Add your resume link later -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Home / Hero -->
+    <section id="home" class="section hero" aria-label="Hero"> 
+    <div class="container hero-inner">
+        <div class="hero-text reveal">
+        <div class="avatar-wrap" aria-hidden="true">
+            <img src="assets/avatar.jpg" alt="" class="avatar">
+        </div>
+        <h1 class="headline">
+            Hi, I’m <span class="accent-underline">Ishan</span>.
+        </h1>
+        <p class="subhead">
+            Computer Science student passionate about backend development, problem solving, and building practical projects that drive growth and learning.
+        <div class="cta-row">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects" class="section" aria-label="Projects">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <p class="muted">A few highlights. I’ll keep adding more.</p>
+
+        <div class="grid cards" aria-live="polite">
+        <!-- Expensly -->
+        <article class="card">
+            <img src="assets/expensely.JPG" alt="Screenshot of Expensly app" class="card-img">
+            <div class="card-body">
+            <h3 class="card-title">Expensly — Expense Tracker</h3>
+            <p class="card-text">
+                A Django-based personal finance web app to manage expenses, income, and budgets.
+            </p>
+            <ul class="card-list">
+                <li>User authentication with profiles and categories (income & expense).</li>
+                <li>Transactions + budgets with progress tracking.</li>
+                <li>Dashboard with charts and Light/Dark theme toggle.</li>
+            </ul>
+            <div class="tags">
+                <span>Django</span><span>Chart.js</span><span>SQLite</span>
+            </div>
+            </div>
+            <div class="card-actions">
+            
+            <a class="btn btn-primary" href="https://github.com/Insaniyat-Ishan/Expensly" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </article>
+
+        <!-- GlowCart -->
+        <article class="card">
+            <img src="assets/glowcart.JPG" alt="Screenshot of Glowcart" class="card-img">
+            <div class="card-body">
+            <h3 class="card-title">GlowCart — Skincare E-commerce</h3>
+            <p class="card-text">
+                A full-featured Django e-commerce site for skincare products.
+            </p>
+            <ul class="card-list">
+                <li>Product catalog with filtering, search, and wishlist.</li>
+                <li>Cart, coupons, and checkout with Stripe or COD.</li>
+                <li>Orders, invoices, reviews, and admin dashboard metrics.</li>
+            </ul>
+            <div class="tags">
+                <span>Django</span><span>PostgreSQL</span><span>Stripe</span>
+            </div>
+            </div>
+            <div class="card-actions">
+            
+            <a class="btn btn-primary" href="https://github.com/Insaniyat-Ishan/GlowCart-Django-e-commerce-" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </article>
+
+        <!-- MyChef -->
+        <article class="card">
+            <img src="assets/mychef.JPG" alt="Screenshot of MyChef" class="card-img">
+            <div class="card-body">
+            <h3 class="card-title">MyChef — Online Recipe Management</h3>
+            <p class="card-text">
+                A Flask-based recipe management system for searching, saving, and planning meals.
+            </p>
+            <ul class="card-list">
+                <li>Recipe search by ingredient/cuisine/time with filters.</li>
+                <li>Weekly meal planner with calendar view.</li>
+                <li>Ratings, reviews, and ingredient-based suggestions.</li>
+            </ul>
+            <div class="tags">
+                <span>Flask</span><span>MongoDB</span><span>Bootstrap</span>
+            </div>
+            </div>
+            <div class="card-actions">
+            <a class="btn btn-primary" href="https://github.com/Insaniyat-Ishan/MyChef-Flask" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </article>
+
+        <!-- Travel Guide -->
+        <article class="card">
+            <img src="assets/travelguide.JPG" alt="Screenshot of Travel Guide" class="card-img">
+            <div class="card-body">
+            <h3 class="card-title">Travel Guide — Web App</h3>
+            <p class="card-text">
+                A Django-based travel planning platform with curated destination info.
+            </p>
+            <ul class="card-list">
+                <li>Destination search with weather & maps API integration.</li>
+                <li>User accounts with saved trips and favorites.</li>
+                <li>Responsive UI for mobile and desktop.</li>
+            </ul>
+            <div class="tags">
+                <span>Django</span><span>APIs</span><span>Bootstrap</span>
+            </div>
+            </div>
+            <div class="card-actions">
+            
+            <a class="btn btn-primary" href="https://github.com/Insaniyat-Ishan/Travel-Guide-Platform" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </article>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="section alt" aria-label="About">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <p class="muted">
+            I am a tech enthusiast with hands-on experience in Java, Spring Boot, C, Python, and Django. Fluent in English and passionate about continuous learning, I am currently expanding my skill set in cybersecurity. 
+            <br>
+            I enjoy building efficient and user-friendly applications, and my projects highlight my ability to tackle complex problems with innovative solutions. My current focus areas include backend development, web frameworks, and integrating cybersecurity principles to design more secure systems.
+        </p>
+
+
+        <div class="skills-grid">
+          <span>Python</span>
+          <span>Django</span>
+          <span>JavaScript</span>
+          <span>React</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>Git/GitHub</span>
+          <span>SQL</span>
+          <span>MongoDB</span>
+          <span>Machine Learning</span>
+        </div>
+      </div>
+    </section>
+    <section id="experience" class="section alt" aria-label="Experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+            <div class="timeline-item">
+                <h3 class="timeline-title">Strategic Planning Specialist — HawX Esports</h3>
+                <span class="timeline-date">April 2019 – Present · Dhaka, Bangladesh (Remote)</span>
+                <p class="muted">
+                Transitioned from competitive player to strategy role; applied data-driven approaches to improve team outcomes.
+                </p>
+                <p class="muted">
+                Analyzed market trends and optimized processes to enhance operational efficiency.
+                </p>
+                <p class="muted">
+                Collaborated with management, esports professionals, and marketing to strengthen organizational positioning.
+                </p>
+            </div>
+            </div>
+        </div>
+    </section>
+    <section id="certifications" class="section" aria-label="Certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="cert-grid">
+            <article class="cert-card">
+                <img src="assets/coursera.png" alt="Coursera logo" class="cert-logo">
+                <h3 class="cert-title">Introduction to Cyber Security Specialization</h3>
+                <p class="muted">Coursera — Issued 2025</p>
+                <a href="https://www.coursera.org/account/accomplishments/verify/WO632PW7FUEX" 
+                target="_blank" rel="noopener" class="btn btn-ghost">View Certificate</a>
+            </article>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="section" aria-label="Contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="muted">Let’s connect! You can reach me at:</p>
+
+        <div class="contact-actions">
+          <button id="copyEmail" class="btn btn-primary">📋 Copy Email</button>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=insaniyatislam11@gmail.com" 
+                target="_blank" rel="noopener" class="btn btn-ghost">✉️ Send Email</a>
+          <a href="https://www.linkedin.com/in/insaniyat-ishan-101b811a3/" target="_blank" class="btn btn-ghost">🔗 LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span> Insaniyat Ishan. All rights reserved.</p>
+            <div class="socials">
+            <a href="https://github.com/Insaniyat-Ishan" target="_blank" rel="noopener">💻 GitHub</a>
+            <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener">🔗 LinkedIn</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=insaniyatislam11@gmail.com" 
+                target="_blank" rel="noopener">✉️ Email</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>
