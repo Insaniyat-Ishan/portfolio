@@ -136,6 +136,45 @@ if ('IntersectionObserver' in window) {
 
   revealTargets.forEach(el => revObs.observe(el));
 } else {
-  // Fallback: show all
   revealTargets.forEach(el => el.classList.add('in-view'));
+}
+
+// Typing Effect
+const typingElement = document.getElementById('typing-text');
+if (typingElement) {
+  const words = ["Curious Coder.", "Problem Solver.", "Backend Dev.", "Cybersecurity Enthusiast."];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let isWaiting = false;
+
+  function type() {
+    const currentWord = words[wordIndex];
+    
+    if (isDeleting) {
+      typingElement.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      typingElement.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    if (!isDeleting && charIndex === currentWord.length) {
+      isWaiting = true;
+      setTimeout(() => {
+        isDeleting = true;
+        isWaiting = false;
+        type();
+      }, 2000); // Wait at end of word
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      type();
+    } else {
+      const speed = isDeleting ? 50 : 100;
+      setTimeout(type, isWaiting ? 2000 : speed);
+    }
+  }
+
+  type();
 }
