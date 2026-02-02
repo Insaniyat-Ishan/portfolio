@@ -1442,3 +1442,65 @@ body {
   color: var(--accent);
   font-weight: 500;
 }
+/* ========== Custom Scrollbar ========== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7000ff, #3b0080);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9333ea;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7000ff #0a0a0f;
+}
+
+/* ========== Scroll Reveal Animation ========== */
+.section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== Enhanced Glassmorphism for Cards ========== */
+.cards .card {
+  background: rgba(20, 15, 35, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ========== Smooth Link Underline Animation ========== */
+a:not(.btn):not(.brand):not(.nav-link) {
+  position: relative;
+}
+
+a:not(.btn):not(.brand):not(.nav-link)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+a:not(.btn):not(.brand):not(.nav-link):hover::after {
+  width: 100%;
+}

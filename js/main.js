@@ -208,3 +208,18 @@ if (statNumbers.length > 0 && 'IntersectionObserver' in window) {
 
   statNumbers.forEach(stat => statsObserver.observe(stat));
 }
+
+// ========== Section Scroll Reveal ==========
+const allSections = document.querySelectorAll('.section');
+if ('IntersectionObserver' in window && allSections.length > 0) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        sectionObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  allSections.forEach(section => sectionObserver.observe(section));
+}
