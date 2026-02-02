@@ -16,6 +16,16 @@
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
     <!-- Animated Background Blobs -->
     <div class="blobs-container">
         <div class="blob blob-1"></div>
@@ -41,8 +51,9 @@
             <nav id="site-nav" class="site-nav">
                 <ul>
                     <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#tools">Tools</a></li>
                     <li><a href="#cybersecurity">Cybersecurity</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="assets/Final cv.pdf" target="_blank" rel="noopener">Resume</a></li>
@@ -54,24 +65,62 @@
     <main id="main">
         <!-- Home / Hero -->
         <section id="home" class="section hero" aria-label="Hero">
-            <div class="container hero-inner">
+            <div class="container hero-with-terminal">
                 <div class="hero-text reveal">
                     <div class="avatar-wrap" aria-hidden="true">
                         <img src="assets/avatar.jpg" alt="" class="avatar">
                     </div>
                     <h1 class="headline">
-                        Hi, I’m <span class="accent-underline">Ishan</span>.
+                        Hi, I'm <span class="accent-underline">Ishan</span>.
                     </h1>
                     <p class="subhead">
-                        I’m a <span id="typing-text" class="accent"></span>
+                        I'm a <span id="typing-text" class="accent"></span>
                     </p>
                     <div class="cta-row">
                         <a href="#projects" class="btn btn-primary">View Projects</a>
                         <a href="#contact" class="btn btn-ghost">Contact Me</a>
                     </div>
                 </div>
+
+                <!-- Terminal beside hero -->
+                <div class="hero-terminal reveal">
+                    <div class="terminal-container" id="security-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-button red"></div>
+                            <div class="terminal-button yellow"></div>
+                            <div class="terminal-button green"></div>
+                            <div class="terminal-title">ishan@security:~</div>
+                        </div>
+                        <div class="terminal-output"></div>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section" aria-label="Stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="6">0</div>
+                        <div class="stat-label">Months Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="12">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="3">0</div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">Security Tools</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="skills" class="section" aria-label="Technical Skills">
             <div class="container">
                 <h2 class="section-title">Technical Skills</h2>
@@ -107,6 +156,344 @@
             </div>
         </section>
 
+        <!-- Security Tools -->
+        <section id="tools" class="section tools-section" aria-label="Security Tools">
+            <div class="container">
+                <h2 class="section-title">Security Tools</h2>
+                <p class="muted">Tools and platforms I've explored and worked with.</p>
+                <div class="tools-grid">
+                    <div class="tool-card"><img src="assets/Wazuh.png" alt="Wazuh"></div>
+                    <div class="tool-card"><img src="assets/splunk.png" alt="Splunk"></div>
+                    <div class="tool-card"><img src="assets/Tracecat.png" alt="Tracecat"></div>
+                    <div class="tool-card"><img src="assets/shuffle.avif" alt="Shuffle"></div>
+                    <div class="tool-card"><img src="assets/elastic.png" alt="Elastic"></div>
+                    <div class="tool-card"><img src="assets/modsecurity.png" alt="ModSecurity"></div>
+                    <div class="tool-card"><img src="assets/suricata.jpeg" alt="Suricata"></div>
+                    <div class="tool-card"><img src="assets/zeek.png" alt="Zeek"></div>
+                    <div class="tool-card"><img src="assets/opnsense.svg" alt="OPNsense"></div>
+                    <div class="tool-card"><img src="assets/iris.png" alt="IRIS"></div>
+                    <div class="tool-card"><img src="assets/grr.png" alt="GRR"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cybersecurity Projects -->
+        <section id="cybersecurity" class="section" aria-label="Cybersecurity Projects">
+            <div class="container">
+                <h2 class="section-title">Cybersecurity Projects</h2>
+                <p class="muted">Documentation of security tools and threat detection frameworks I've explored.</p>
+
+                <div class="grid cards" aria-live="polite">
+                    <div class="card-flip-container">
+                        <div class="card-flipper">
+                            <div class="card-front">
+                                <article class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-title">🛡️ SURICATA IDS/IPS</h3>
+                                        <p class="card-text">
+                                            Comprehensive documentation on Suricata, a high-performance Network IDS,
+                                            IPS, and
+                                            Network Security Monitoring engine.
+                                        </p>
+                                        <ul class="card-list">
+                                            <li>Real-time intrusion detection and prevention.</li>
+                                            <li>Protocol identification and deep packet inspection.</li>
+                                            <li>Multi-threaded architecture for high-speed networks.</li>
+                                        </ul>
+                                        <div class="tags">
+                                            <span>IDS/IPS</span><span>Network Security</span><span>Threat
+                                                Detection</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-actions">
+                                        <a class="btn btn-primary" href="assets/SURICATA.pdf" target="_blank"
+                                            rel="noopener">📄 View
+                                            Documentation</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="card-back">
+                                <h3>🛡️ SURICATA IDS/IPS</h3>
+                                <p>Deep dive into Suricata, a high-performance network intrusion detection and
+                                    prevention system.</p>
+                                <p><strong>Key Topics:</strong></p>
+                                <ul>
+                                    <li>Multi-threaded architecture & performance tuning</li>
+                                    <li>Custom rule creation for specific threats</li>
+                                    <li>Eve.json logging & output analysis</li>
+                                    <li>IPS (Inline) vs IDS (Passive) modes</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">IDS/IPS</span>
+                                    <span class="tech-tag">Network Security</span>
+                                    <span class="tech-tag">Packet Analysis</span>
+                                </div>
+                                <div class="card-actions" style="margin-top: 15px;">
+                                    <a class="btn btn-primary" href="assets/SURICATA.pdf" target="_blank"
+                                        rel="noopener">📄 View Documentation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip-container">
+                        <div class="card-flipper">
+                            <div class="card-front">
+                                <article class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-title">🔍 YARA Rules</h3>
+                                        <p class="card-text">
+                                            In-depth exploration of YARA, a pattern matching tool used to identify and
+                                            classify
+                                            malware samples.
+                                        </p>
+                                        <ul class="card-list">
+                                            <li>Creating custom rules for malware detection.</li>
+                                            <li>Pattern matching and signature-based analysis.</li>
+                                            <li>Integration with threat intelligence workflows.</li>
+                                        </ul>
+                                        <div class="tags">
+                                            <span>Malware Analysis</span><span>Pattern Matching</span><span>Threat
+                                                Intelligence</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-actions">
+                                        <a class="btn btn-primary" href="assets/YARA.pdf" target="_blank"
+                                            rel="noopener">📄 View
+                                            Documentation</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="card-back">
+                                <h3>🔍 YARA Malware Detection</h3>
+                                <p>Comprehensive malware analysis using YARA pattern matching for threat classification
+                                    and detection.</p>
+                                <p><strong>Key Topics:</strong></p>
+                                <ul>
+                                    <li>YARA rule syntax definition</li>
+                                    <li>String matching: text, hex, and regex</li>
+                                    <li>Writing effective conditions and logic</li>
+                                    <li>Integrating YARA with Python</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Malware Analysis</span>
+                                    <span class="tech-tag">Pattern Matching</span>
+                                    <span class="tech-tag">Threat Hunting</span>
+                                </div>
+                                <div class="card-actions" style="margin-top: 15px;">
+                                    <a class="btn btn-primary" href="assets/YARA.pdf" target="_blank" rel="noopener">📄
+                                        View Documentation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip-container">
+                        <div class="card-flipper">
+                            <div class="card-front">
+                                <article class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-title">🌐 ZEEK Network Analysis</h3>
+                                        <p class="card-text">
+                                            Detailed study of Zeek (formerly Bro), a powerful network analysis framework
+                                            for
+                                            monitoring network traffic.
+                                        </p>
+                                        <ul class="card-list">
+                                            <li>Network traffic analysis and logging.</li>
+                                            <li>Script-based event-driven architecture.</li>
+                                            <li>Detection of anomalies and security incidents.</li>
+                                        </ul>
+                                        <div class="tags">
+                                            <span>Network Monitoring</span><span>Traffic Analysis</span><span>Security
+                                                Analytics</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-actions">
+                                        <a class="btn btn-primary" href="assets/ZEEK.pdf" target="_blank"
+                                            rel="noopener">📄 View
+                                            Documentation</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="card-back">
+                                <h3>📊 ZEEK Network Monitoring</h3>
+                                <p>Advanced network traffic analysis and security monitoring using Zeek (formerly Bro).
+                                </p>
+                                <p><strong>Key Topics:</strong></p>
+                                <ul>
+                                    <li>Event-driven scripting architecture</li>
+                                    <li>Network protocol analysis & logging</li>
+                                    <li>Zeek cluster deployment concepts</li>
+                                    <li>Intelligence framework integration</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Network Analysis</span>
+                                    <span class="tech-tag">Threat Detection</span>
+                                    <span class="tech-tag">Log Analysis</span>
+                                </div>
+                                <div class="card-actions" style="margin-top: 15px;">
+                                    <a class="btn btn-primary" href="assets/ZEEK.pdf" target="_blank" rel="noopener">📄
+                                        View Documentation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip-container">
+                        <div class="card-flipper">
+                            <div class="card-front">
+                                <article class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-title">🔧 Wazuh + MISP + DFIR-IRIS Integration</h3>
+                                        <p class="card-text">
+                                            Comprehensive documentation on integrating Wazuh SIEM/XDR with MISP threat
+                                            intelligence
+                                            platform and DFIR-IRIS incident response framework.
+                                        </p>
+                                        <ul class="card-list">
+                                            <li>Automated threat intelligence integration with MISP.</li>
+                                            <li>Python hooks for incident triage and response automation.</li>
+                                            <li>Seamless DFIR-IRIS case management workflow.</li>
+                                        </ul>
+                                        <div class="tags">
+                                            <span>SIEM/XDR</span><span>Threat Intelligence</span><span>Incident
+                                                Response</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-actions">
+                                        <a class="btn btn-primary" href="assets/Wazuh IRIS MISP.pdf" target="_blank"
+                                            rel="noopener">📄 View
+                                            Documentation</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="card-back">
+                                <h3>🔧 Wazuh SIEM Integration</h3>
+                                <p>Enterprise SIEM/XDR integration with MISP threat intelligence and DFIR-IRIS incident
+                                    response.</p>
+                                <p><strong>Key Topics:</strong></p>
+                                <ul>
+                                    <li>Wazuh Manager & Agent architecture</li>
+                                    <li>File Integrity Monitoring (FIM) setup</li>
+                                    <li>Vulnerability Detection & SCA</li>
+                                    <li>Active Response configuration</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">SIEM/XDR</span>
+                                    <span class="tech-tag">Threat Intel</span>
+                                    <span class="tech-tag">Incident Response</span>
+                                </div>
+                                <div class="card-actions" style="margin-top: 15px;">
+                                    <a class="btn btn-primary" href="assets/Wazuh IRIS MISP.pdf" target="_blank"
+                                        rel="noopener">📄 View Documentation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip-container">
+                        <div class="card-flipper">
+                            <div class="card-front">
+                                <article class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-title">🔎 GRR Rapid Response</h3>
+                                        <p class="card-text">
+                                            Detailed documentation on Google Rapid Response (GRR), an incident response
+                                            framework
+                                            for remote live forensics.
+                                        </p>
+                                        <ul class="card-list">
+                                            <li>Remote live forensics and incident triage capabilities.</li>
+                                            <li>Agent-based architecture for endpoint investigation.</li>
+                                            <li>Automated evidence collection and analysis workflows.</li>
+                                        </ul>
+                                        <div class="tags">
+                                            <span>Digital Forensics</span><span>Incident Response</span><span>Endpoint
+                                                Security</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-actions">
+                                        <a class="btn btn-primary" href="assets/GRR.pdf" target="_blank"
+                                            rel="noopener">📄 View
+                                            Documentation</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="card-back">
+                                <h3>🔎 GRR Rapid Response</h3>
+                                <p>Remote live forensics and incident response for enterprise endpoint investigation.
+                                </p>
+                                <p><strong>Key Topics:</strong></p>
+                                <ul>
+                                    <li>Remote live forensics capabilities</li>
+                                    <li>Hunt management & scheduling</li>
+                                    <li>Virtual File System (VFS) navigation</li>
+                                    <li>Artifact collection & analysis</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Digital Forensics</span>
+                                    <span class="tech-tag">Incident Response</span>
+                                    <span class="tech-tag">Endpoint Security</span>
+                                </div>
+                                <div class="card-actions" style="margin-top: 15px;">
+                                    <a class="btn btn-primary" href="assets/GRR.pdf" target="_blank" rel="noopener">📄
+                                        View Documentation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-flip-container">
+                        <div class="card-flipper">
+                            <div class="card-front">
+                                <article class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-title">🛡️ ModSecurity v3 WAF</h3>
+                                        <p class="card-text">
+                                            In-depth guide on ModSecurity v3 Web Application Firewall with OWASP Core
+                                            Rule Set for
+                                            protecting web applications.
+                                        </p>
+                                        <ul class="card-list">
+                                            <li>Advanced WAF deployment on Apache and Nginx servers.</li>
+                                            <li>OWASP CRS integration for comprehensive attack protection.</li>
+                                            <li>Custom rule creation and threat mitigation strategies.</li>
+                                        </ul>
+                                        <div class="tags">
+                                            <span>WAF</span><span>Web Security</span><span>OWASP</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-actions">
+                                        <a class="btn btn-primary"
+                                            href="assets/ModSecurity v3 with latest CRS ruleset.pdf" target="_blank"
+                                            rel="noopener">📄 View
+                                            Documentation</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="card-back">
+                                <h3>🛡️ ModSecurity v3 WAF</h3>
+                                <p>Advanced Web Application Firewall with OWASP Core Rule Set for comprehensive
+                                    protection.</p>
+                                <p><strong>Key Topics:</strong></p>
+                                <ul>
+                                    <li>WAF deployment modes (Embedded)</li>
+                                    <li>OWASP Core Rule Set (CRS) structure</li>
+                                    <li>Rule processing phases & execution</li>
+                                    <li>Logging, Audit, and Tuning</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">WAF</span>
+                                    <span class="tech-tag">Web Security</span>
+                                    <span class="tech-tag">OWASP</span>
+                                </div>
+                                <div class="card-actions" style="margin-top: 15px;">
+                                    <a class="btn btn-primary" href="assets/ModSecurity v3 with latest CRS ruleset.pdf"
+                                        target="_blank" rel="noopener">📄 View Documentation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <!-- Projects -->
         <section id="projects" class="section" aria-label="Projects">
@@ -116,7 +503,7 @@
 
                 <div class="grid cards" aria-live="polite">
                     <!-- Expensly -->
-                    <article class="card">
+                    <article class="card project-card" data-category="webdev python">
                         <img src="assets/expensely.JPG" alt="Screenshot of Expensly app" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">Expensly — Expense Tracker</h3>
@@ -140,7 +527,7 @@
                     </article>
 
                     <!-- GlowCart -->
-                    <article class="card">
+                    <article class="card project-card" data-category="webdev">
                         <img src="assets/glowcart.JPG" alt="Screenshot of Glowcart" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">GlowCart — Skincare E-commerce</h3>
@@ -165,7 +552,7 @@
                     </article>
 
                     <!-- MyChef -->
-                    <article class="card">
+                    <article class="card project-card" data-category="webdev python">
                         <img src="assets/mychef.JPG" alt="Screenshot of MyChef" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">MyChef — Online Recipe Management</h3>
@@ -188,7 +575,7 @@
                     </article>
 
                     <!-- Travel Guide -->
-                    <article class="card">
+                    <article class="card project-card" data-category="webdev python">
                         <img src="assets/travelguide.JPG" alt="Screenshot of Travel Guide" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">Travel Guide — Web App</h3>
@@ -210,7 +597,7 @@
                                 target="_blank" rel="noopener">GitHub</a>
                         </div>
                     </article>
-                    <article class="card">
+                    <article class="card project-card" data-category="webdev">
                         <img src="assets/dungeon.JPG" alt="Screenshot of Dungeon Escape Game" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">Dungeon Escape — Escape game</h3>
@@ -234,7 +621,7 @@
                     </article>
 
 
-                    <article class="card">
+                    <article class="card project-card" data-category="webdev">
                         <img src="assets/dosh.png" alt="Screenshot of Dosh App" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">Dosh — Smart Finance App</h3>
@@ -257,87 +644,6 @@
                         </div>
                     </article>
 
-                </div>
-            </div>
-        </section>
-
-        <!-- Cybersecurity Projects -->
-        <section id="cybersecurity" class="section alt" aria-label="Cybersecurity Projects">
-            <div class="container">
-                <h2 class="section-title">Cybersecurity Projects</h2>
-                <p class="muted">Documentation of security tools and threat detection frameworks I've explored.</p>
-
-                <div class="grid cards" aria-live="polite">
-                    <!-- SURICATA -->
-                    <article class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">🛡️ SURICATA IDS/IPS</h3>
-                            <p class="card-text">
-                                Comprehensive documentation on Suricata, a high-performance Network IDS, IPS, and
-                                Network Security Monitoring engine.
-                            </p>
-                            <ul class="card-list">
-                                <li>Real-time intrusion detection and prevention.</li>
-                                <li>Protocol identification and deep packet inspection.</li>
-                                <li>Multi-threaded architecture for high-speed networks.</li>
-                            </ul>
-                            <div class="tags">
-                                <span>IDS/IPS</span><span>Network Security</span><span>Threat Detection</span>
-                            </div>
-                        </div>
-                        <div class="card-actions">
-                            <a class="btn btn-primary" href="assets/SURICATA.pdf" target="_blank" rel="noopener">📄 View
-                                Documentation</a>
-                        </div>
-                    </article>
-
-                    <!-- YARA -->
-                    <article class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">🔍 YARA Rules</h3>
-                            <p class="card-text">
-                                In-depth exploration of YARA, a pattern matching tool used to identify and classify
-                                malware samples.
-                            </p>
-                            <ul class="card-list">
-                                <li>Creating custom rules for malware detection.</li>
-                                <li>Pattern matching and signature-based analysis.</li>
-                                <li>Integration with threat intelligence workflows.</li>
-                            </ul>
-                            <div class="tags">
-                                <span>Malware Analysis</span><span>Pattern Matching</span><span>Threat
-                                    Intelligence</span>
-                            </div>
-                        </div>
-                        <div class="card-actions">
-                            <a class="btn btn-primary" href="assets/YARA.pdf" target="_blank" rel="noopener">📄 View
-                                Documentation</a>
-                        </div>
-                    </article>
-
-                    <!-- ZEEK -->
-                    <article class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">🌐 ZEEK Network Analysis</h3>
-                            <p class="card-text">
-                                Detailed study of Zeek (formerly Bro), a powerful network analysis framework for
-                                monitoring network traffic.
-                            </p>
-                            <ul class="card-list">
-                                <li>Network traffic analysis and logging.</li>
-                                <li>Script-based event-driven architecture.</li>
-                                <li>Detection of anomalies and security incidents.</li>
-                            </ul>
-                            <div class="tags">
-                                <span>Network Monitoring</span><span>Traffic Analysis</span><span>Security
-                                    Analytics</span>
-                            </div>
-                        </div>
-                        <div class="card-actions">
-                            <a class="btn btn-primary" href="assets/ZEEK.pdf" target="_blank" rel="noopener">📄 View
-                                Documentation</a>
-                        </div>
-                    </article>
                 </div>
             </div>
         </section>
@@ -386,35 +692,40 @@
                         <h3 class="timeline-title">Junior Security Engineer — Tech4Time</h3>
                         <span class="timeline-date">Nov 2025 – Present · Dhaka, Bangladesh</span>
                         <p class="muted">
-                            Assisted in implementing Network Detection and Response (NDR) solutions using Wazuh,
-                            Suricata, Zeek, and YARA.
+                            Assisted in implementing NDR solutions using Wazuh, Suricata, Zeek, and YARA.
                         </p>
                         <p class="muted">
-                            Supported malware detection and IPS deployments, including SQL injection and DDoS
-                            mitigation, under supervision.
+                            Supported malware detection, IPS, and mitigation of SQL injection & DDoS attacks.
                         </p>
                         <p class="muted">
-                            Contributed to security log analysis, Linux server management, and documentation of security
-                            frameworks.
+                            Hardened Linux web servers (Apache/Nginx) using ModSecurity v3 WAF with OWASP CRS.
                         </p>
                         <p class="muted">
-                            Assisted in deploying ModSecurity WAF on Apache and Nginx using the OWASP Core Rule Set.
+                            Integrated Wazuh with MISP and DFIR-IRIS; developed Python hooks for automated threat
+                            intelligence and incident triage.
+                        </p>
+                        <p class="muted">
+                            Performed security log analysis, Linux server management, and technical documentation.
                         </p>
                     </div>
                     <div class="timeline-item">
-                        <h3 class="timeline-title">Security Operations Intern — Tech4Time</h3>
+                        <h3 class="timeline-title">Security Operations Intern — Bengal Airlift</h3>
                         <span class="timeline-date">Aug 2025 – Oct 2025 · Dhaka, Bangladesh</span>
                         <p class="muted">
-                            Assisted in configuring and maintaining Wazuh (SIEM/XDR) for centralized log collection and
-                            security monitoring under supervision.
+                            Deployed and configured Wazuh (SIEM/XDR) for centralized log collection, FIM, and real-time
+                            threat detection.
                         </p>
                         <p class="muted">
-                            Supported security engineering activities to improve network visibility and basic endpoint
-                            protection.
+                            Implemented network monitoring using Suricata and Zeek; managed OPNsense firewalls for
+                            traffic segmentation and security.
                         </p>
                         <p class="muted">
-                            Assisted in analyzing system and security logs to help identify potential vulnerabilities
-                            and support incident response processes.
+                            Used YARA for custom signature matching and GRR for remote live forensics and incident
+                            triage.
+                        </p>
+                        <p class="muted">
+                            Built SOAR workflows using Tracecat and Shuffle to automate incident response and reduce
+                            alert fatigue.
                         </p>
                     </div>
                     <div class="timeline-item">
@@ -466,7 +777,6 @@
             </div>
         </section>
 
-
         <!-- Contact -->
         <section id="contact" class="section" aria-label="Contact">
             <div class="container">
@@ -499,6 +809,10 @@
 
 
     <script src="js/main.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/terminal.js"></script>
+    <script src="js/konami.js"></script>
+    <script src="js/particles.js"></script>
 </body>
 
 </html>

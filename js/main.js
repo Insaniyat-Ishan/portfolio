@@ -69,7 +69,7 @@ const copyBtn = document.getElementById('copyEmail');
 if (copyBtn) {
   copyBtn.addEventListener('click', () => {
     const email = "insaniyatislam11@gmail.com";
-                                 
+
     navigator.clipboard.writeText(email).then(() => {
       copyBtn.textContent = "✅ Copied!";
       setTimeout(() => copyBtn.textContent = "📋 Copy Email", 2000);
@@ -77,50 +77,16 @@ if (copyBtn) {
   });
 }
 
-// Theme toggle (light/dark mode)
-const toggle = document.createElement('button');
-toggle.textContent = "🌙 Dark";
-toggle.className = "theme-toggle";
-document.body.appendChild(toggle);
-
-let dark = true;
-toggle.addEventListener('click', () => {
-  dark = !dark;
-  if (dark) {
-    document.documentElement.classList.remove('light');
-    toggle.textContent = "🌙 Dark";
-  } else {
-    document.documentElement.classList.add('light');
-    toggle.textContent = "☀️ Light";
-  }
-});
-
-// Light theme variables injected
-const lightTheme = `
-  :root.light {
-    --bg: #ffffff;
-    --panel: #f4f6fb;
-    --panel-2: #eef1f6;
-    --text: #11151f;
-    --muted: #555e6c;
-    --accent: #7c5cff;
-    --accent-contrast: #ffffff;
-    --border: #d0d5e0;
-    --shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-`;
-const styleEl = document.createElement('style');
-styleEl.textContent = lightTheme;
-document.head.appendChild(styleEl);
-
 // Scroll reveal: add .reveal to targets and toggle .in-view on enter
 const revealTargets = [
   ...document.querySelectorAll('.hero-text'),
+  ...document.querySelectorAll('.hero-terminal'),
   ...document.querySelectorAll('.section-title'),
   ...document.querySelectorAll('.cards .card'),
   ...document.querySelectorAll('.skills-grid span'),
   ...document.querySelectorAll('.contact-actions .btn')
 ];
+
 
 revealTargets.forEach(el => el.classList.add('reveal'));
 
@@ -142,7 +108,7 @@ if ('IntersectionObserver' in window) {
 // Typing Effect
 const typingElement = document.getElementById('typing-text');
 if (typingElement) {
-  const words = ["Curious Coder.", "Problem Solver.", "Backend Dev.", "Cybersecurity Enthusiast."];
+  const words = ["Security Engineer.", "Threat Hunter.", "Python Developer.", "SOC Analyst.", "Cybersecurity Enthusiast."];
   let wordIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
@@ -150,7 +116,7 @@ if (typingElement) {
 
   function type() {
     const currentWord = words[wordIndex];
-    
+
     if (isDeleting) {
       typingElement.textContent = currentWord.substring(0, charIndex - 1);
       charIndex--;
@@ -177,4 +143,68 @@ if (typingElement) {
   }
 
   type();
+}
+
+// Scroll Progress Bar
+const scrollProgress = document.querySelector('.scroll-progress');
+if (scrollProgress) {
+  window.addEventListener('scroll', () => {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    scrollProgress.style.width = scrolled + '%';
+  });
+}
+
+// Scroll to Top Button
+const scrollToTopBtn = document.querySelector('.scroll-to-top');
+if (scrollToTopBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      scrollToTopBtn.classList.add('visible');
+    } else {
+      scrollToTopBtn.classList.remove('visible');
+    }
+  });
+
+  scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+// Animated Stats Counter
+const animateCounter = (element) => {
+  const target = parseInt(element.getAttribute('data-target'));
+  const duration = 2000; // 2 seconds
+  const increment = target / (duration / 16); // 60fps
+  let current = 0;
+
+  const updateCounter = () => {
+    current += increment;
+    if (current < target) {
+      element.textContent = Math.floor(current);
+      requestAnimationFrame(updateCounter);
+    } else {
+      element.textContent = target;
+    }
+  };
+
+  updateCounter();
+};
+
+// Observe stats and trigger counter animation
+const statNumbers = document.querySelectorAll('.stat-number');
+if (statNumbers.length > 0 && 'IntersectionObserver' in window) {
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  statNumbers.forEach(stat => statsObserver.observe(stat));
 }
