@@ -44,8 +44,8 @@ class ParticleNetwork {
             this.particles.push({
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: (Math.random() - 0.5) * 0.5,
+                vx: (Math.random() - 0.5) * 0.25,
+                vy: (Math.random() - 0.5) * 0.25,
                 radius: Math.random() * 3 + 2 // Increased size (was 2+1)
             });
         }
@@ -89,13 +89,13 @@ class ParticleNetwork {
                 const dy = particle.y - this.mouse.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 if (distance < 100) {
-                    particle.vx += dx / distance * 0.2;
-                    particle.vy += dy / distance * 0.2;
+                    particle.vx += dx / distance * 0.1;
+                    particle.vy += dy / distance * 0.1;
                 }
             }
 
-            // Limit velocity
-            const maxVel = 1;
+            // Maintain constant velocity - clamp to original speed range (0.25 max)
+            const maxVel = 0.25;
             const vel = Math.sqrt(particle.vx ** 2 + particle.vy ** 2);
             if (vel > maxVel) {
                 particle.vx = (particle.vx / vel) * maxVel;

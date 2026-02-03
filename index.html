@@ -14,6 +14,33 @@
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span class="glitch" data-text="ISHAN">ISHAN</span>
+            </div>
+            <div class="loader-terminal">
+                <div class="loader-line">
+                    <span class="loader-prompt">$</span>
+                    <span class="loader-text">Initializing portfolio...</span>
+                </div>
+                <div class="loader-line">
+                    <span class="loader-prompt">$</span>
+                    <span class="loader-text">Loading assets...</span>
+                </div>
+                <div class="loader-line">
+                    <span class="loader-prompt">$</span>
+                    <span class="loader-text">Establishing secure connection...</span>
+                </div>
+            </div>
+            <div class="loader-bar-container">
+                <div class="loader-bar"></div>
+            </div>
+            <div class="loader-percentage">0%</div>
+        </div>
+    </div>
+
     <a class="skip-link" href="#main">Skip to content</a>
 
     <!-- Scroll Progress Bar -->
@@ -71,7 +98,7 @@
                         <img src="assets/avatar.jpg" alt="" class="avatar">
                     </div>
                     <h1 class="headline">
-                        Hi, I'm <span class="accent-underline">Ishan</span>.
+                        Hi, I'm <span class="accent-underline glitch" data-text="Ishan">Ishan</span>.
                     </h1>
                     <p class="subhead">
                         I'm a <span id="typing-text" class="accent"></span>
@@ -102,10 +129,6 @@
             <div class="container">
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <div class="stat-number" data-target="6">0</div>
-                        <div class="stat-label">Months Experience</div>
-                    </div>
-                    <div class="stat-card">
                         <div class="stat-number" data-target="12">0</div>
                         <div class="stat-label">Projects Completed</div>
                     </div>
@@ -121,35 +144,109 @@
             </div>
         </section>
 
+        <!-- About -->
+        <section id="about" class="section alt" aria-label="About">
+            <div class="container">
+                <h2 class="section-title">About</h2>
+                <p class="muted">
+                    I am a Junior Security Engineer at Tech4Time with hands-on experience in cybersecurity operations,
+                    network detection and response (NDR), and security monitoring. My technical expertise spans Python,
+                    C, Django, Spring Boot, and various security tools including Wazuh, Suricata, Zeek, and YARA.
+                    <br>
+                    I specialize in implementing SIEM/XDR solutions, malware detection, IPS deployments, and web
+                    application firewalls (ModSecurity WAF). My work involves security log analysis, Linux server
+                    management, and protecting systems against SQL injection and DDoS attacks. Beyond cybersecurity, I
+                    enjoy building efficient applications, and my projects demonstrate my ability to tackle complex
+                    problems with innovative solutions.
+                </p>
+
+
+                <div class="skills-grid">
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>Cybersecurity</span>
+                    <span>Wazuh SIEM/XDR</span>
+                    <span>Suricata IDS/IPS</span>
+                    <span>Zeek</span>
+                    <span>YARA</span>
+                    <span>ModSecurity WAF</span>
+                    <span>Linux</span>
+                    <span>Network Security</span>
+                    <span>JavaScript</span>
+                    <span>React</span>
+                    <span>Git/GitHub</span>
+                    <span>SQL</span>
+                    <span>MongoDB</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
         <section id="skills" class="section" aria-label="Technical Skills">
             <div class="container">
                 <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-grid-alt">
-                    <div class="skill-box">
-                        <h3>Programming</h3>
-                        <div class="tags">
-                            <span>Python</span><span>C</span>
+                <div class="skills-progress-container">
+                    <!-- Programming -->
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
                         </div>
                     </div>
 
-                    <div class="skill-box">
-                        <h3>Frameworks</h3>
-                        <div class="tags">
-                            <span>Django</span><span>Flask</span><span>Spring Boot</span>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">C</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="75"></div>
                         </div>
                     </div>
 
-                    <div class="skill-box">
-                        <h3>Databases</h3>
-                        <div class="tags">
-                            <span>MongoDB</span><span>SQL</span>
+                    <!-- Frameworks -->
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Django & Flask</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
                         </div>
                     </div>
 
-                    <div class="skill-box">
-                        <h3>Tools</h3>
-                        <div class="tags">
-                            <span>Git</span><span>Adobe Suite</span><span>DaVinci Resolve</span>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Security Tools (SIEM, IDS/IPS)</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+
+                    <!-- Databases -->
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">MongoDB & SQL</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Git & Version Control</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
                         </div>
                     </div>
                 </div>
@@ -648,42 +745,7 @@
             </div>
         </section>
 
-        <!-- About -->
-        <section id="about" class="section alt" aria-label="About">
-            <div class="container">
-                <h2 class="section-title">About</h2>
-                <p class="muted">
-                    I am a Junior Security Engineer at Tech4Time with hands-on experience in cybersecurity operations,
-                    network detection and response (NDR), and security monitoring. My technical expertise spans Python,
-                    C, Django, Spring Boot, and various security tools including Wazuh, Suricata, Zeek, and YARA.
-                    <br>
-                    I specialize in implementing SIEM/XDR solutions, malware detection, IPS deployments, and web
-                    application firewalls (ModSecurity WAF). My work involves security log analysis, Linux server
-                    management, and protecting systems against SQL injection and DDoS attacks. Beyond cybersecurity, I
-                    enjoy building efficient applications, and my projects demonstrate my ability to tackle complex
-                    problems with innovative solutions.
-                </p>
-
-
-                <div class="skills-grid">
-                    <span>Python</span>
-                    <span>Django</span>
-                    <span>Cybersecurity</span>
-                    <span>Wazuh SIEM/XDR</span>
-                    <span>Suricata IDS/IPS</span>
-                    <span>Zeek</span>
-                    <span>YARA</span>
-                    <span>ModSecurity WAF</span>
-                    <span>Linux</span>
-                    <span>Network Security</span>
-                    <span>JavaScript</span>
-                    <span>React</span>
-                    <span>Git/GitHub</span>
-                    <span>SQL</span>
-                    <span>MongoDB</span>
-                </div>
-            </div>
-        </section>
+        <!-- Experience -->
         <section id="experience" class="section alt" aria-label="Experience">
             <div class="container">
                 <h2 class="section-title">Experience</h2>
@@ -709,10 +771,11 @@
                         </p>
                     </div>
                     <div class="timeline-item">
-                        <h3 class="timeline-title">Security Operations Intern — Bengal Airlift</h3>
+                        <h3 class="timeline-title">Security Operations Intern — Tech4Time</h3>
                         <span class="timeline-date">Aug 2025 – Oct 2025 · Dhaka, Bangladesh</span>
                         <p class="muted">
-                            Deployed and configured Wazuh (SIEM/XDR) for centralized log collection, FIM, and real-time
+                            Deployed and configured Wazuh (SIEM/XDR) for centralized log collection, FIM, and
+                            real-time
                             threat detection.
                         </p>
                         <p class="muted">
@@ -730,7 +793,7 @@
                     </div>
                     <div class="timeline-item">
                         <h3 class="timeline-title">Strategic Planning Specialist — HawX Esports</h3>
-                        <span class="timeline-date">April 2019 – Present · Dhaka, Bangladesh (Remote)</span>
+                        <span class="timeline-date">April 2019 – 2023 · Dhaka, Bangladesh (Remote)</span>
                         <p class="muted">
                             Transitioned from competitive player to strategy role; applied data-driven approaches to
                             improve team outcomes.
@@ -784,7 +847,6 @@
                 <p class="muted">Let’s connect! You can reach me at:</p>
 
                 <div class="contact-actions">
-                    <button id="copyEmail" class="btn btn-primary">📋 Copy Email</button>
                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=insaniyatislam11@gmail.com" target="_blank"
                         rel="noopener" class="btn btn-ghost">✉️ Send Email</a>
                     <a href="https://www.linkedin.com/in/insaniyat-ishan-101b811a3/" target="_blank"
@@ -808,11 +870,15 @@
 
 
 
+    <script src="js/loader.js"></script>
     <script src="js/main.js"></script>
     <script src="js/cursor.js"></script>
     <script src="js/terminal.js"></script>
     <script src="js/konami.js"></script>
     <script src="js/particles.js"></script>
+    <script src="js/magnetic.js"></script>
+    <script src="js/tilt.js"></script>
+    <script src="js/scroll-effects.js"></script>
 </body>
 
 </html>

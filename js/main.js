@@ -105,33 +105,36 @@ if ('IntersectionObserver' in window) {
   revealTargets.forEach(el => el.classList.add('in-view'));
 }
 
-// Typing Effect
+// Enhanced Typing Effect with Cursor
 const typingElement = document.getElementById('typing-text');
 if (typingElement) {
-  const words = ["Security Engineer.", "Threat Hunter.", "Python Developer.", "SOC Analyst.", "Cybersecurity Enthusiast."];
+  const words = ['Cybersecurity Professional', 'Security Engineer', 'Tech Enthusiast', 'Problem Solver'];
   let wordIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
   let isWaiting = false;
 
+  // Add cursor element
+  const cursor = document.createElement('span');
+  cursor.className = 'typewriter-cursor';
+  typingElement.after(cursor);
+
   function type() {
     const currentWord = words[wordIndex];
 
-    if (isDeleting) {
+    if (!isDeleting && charIndex <= currentWord.length) {
+      typingElement.textContent = currentWord.substring(0, charIndex);
+      charIndex++;
+      setTimeout(type, 100);
+    } else if (charIndex === currentWord.length && !isDeleting) {
+      isWaiting = true;
+      isDeleting = true;
+      setTimeout(type, 2000);
+    } else if (isDeleting && charIndex > 0) {
       typingElement.textContent = currentWord.substring(0, charIndex - 1);
       charIndex--;
-    } else {
-      typingElement.textContent = currentWord.substring(0, charIndex + 1);
-      charIndex++;
-    }
-
-    if (!isDeleting && charIndex === currentWord.length) {
-      isWaiting = true;
-      setTimeout(() => {
-        isDeleting = true;
-        isWaiting = false;
-        type();
-      }, 2000); // Wait at end of word
+      isWaiting = false;
+      setTimeout(type, 50);
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       wordIndex = (wordIndex + 1) % words.length;
@@ -144,6 +147,7 @@ if (typingElement) {
 
   type();
 }
+
 
 // Scroll Progress Bar
 const scrollProgress = document.querySelector('.scroll-progress');
