@@ -108,11 +108,10 @@ if ('IntersectionObserver' in window) {
 // Enhanced Typing Effect with Cursor
 const typingElement = document.getElementById('typing-text');
 if (typingElement) {
-  const words = ['Cybersecurity Professional', 'Security Engineer', 'Tech Enthusiast', 'Problem Solver'];
+  const words = ['Security Engineer', 'SIEM/XDR Specialist', 'Threat Hunter', 'Python Developer', 'Malware Analyst', 'Django Developer'];
   let wordIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
-  let isWaiting = false;
 
   // Add cursor element
   const cursor = document.createElement('span');
@@ -122,30 +121,37 @@ if (typingElement) {
   function type() {
     const currentWord = words[wordIndex];
 
-    if (!isDeleting && charIndex <= currentWord.length) {
+    if (isDeleting) {
+      // Delete characters
       typingElement.textContent = currentWord.substring(0, charIndex);
-      charIndex++;
-      setTimeout(type, 100);
-    } else if (charIndex === currentWord.length && !isDeleting) {
-      isWaiting = true;
-      isDeleting = true;
-      setTimeout(type, 2000);
-    } else if (isDeleting && charIndex > 0) {
-      typingElement.textContent = currentWord.substring(0, charIndex - 1);
       charIndex--;
-      isWaiting = false;
-      setTimeout(type, 50);
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      wordIndex = (wordIndex + 1) % words.length;
-      type();
+
+      if (charIndex < 0) {
+        // Move to next word
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        charIndex = 0;
+        setTimeout(type, 500); // Brief pause before typing next word
+        return;
+      }
+      setTimeout(type, 50); // Faster deletion
     } else {
-      const speed = isDeleting ? 50 : 100;
-      setTimeout(type, isWaiting ? 2000 : speed);
+      // Type characters
+      typingElement.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+
+      if (charIndex === currentWord.length) {
+        // Word complete, pause then start deleting
+        isDeleting = true;
+        setTimeout(type, 2000); // Pause to read
+        return;
+      }
+      setTimeout(type, 100); // Normal typing speed
     }
   }
 
-  type();
+  // Start the animation
+  setTimeout(type, 500);
 }
 
 
